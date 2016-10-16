@@ -13,9 +13,6 @@ final class NotificationManager: NSObject {
     
     static let instance = NotificationManager()
     
-    private let remoteImageURL = URL(
-        string: "http://free-photos-ls01.gatag.net/images/lgf01a201306271900.jpg")!
-    
     private override init() {
         super.init()
         center.delegate = self
