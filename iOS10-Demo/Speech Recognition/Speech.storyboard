@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="aUQ-l3-CMQ">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Speech View Controller-->
+        <scene sceneID="hP4-5j-CFy">
+            <objects>
+                <viewController id="UNM-wg-hY4" customClass="SpeechViewController" customModule="iOS10_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BVM-Tu-w7d"/>
+                        <viewControllerLayoutGuide type="bottom" id="W8O-go-xxU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Td4-8F-Sx3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="UfW-JY-8oa">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13J-Jg-usw">
+                                <state key="normal" title="Start Recognition"/>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="UNM-wg-hY4" eventType="touchUpInside" id="jyU-Sv-KQe"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="UfW-JY-8oa" secondAttribute="trailing" id="7I6-ac-LaD"/>
+                            <constraint firstItem="13J-Jg-usw" firstAttribute="top" secondItem="UfW-JY-8oa" secondAttribute="bottom" constant="30" id="HqS-jh-4Ih"/>
+                            <constraint firstItem="UfW-JY-8oa" firstAttribute="top" secondItem="BVM-Tu-w7d" secondAttribute="bottom" constant="30" id="Ky8-AX-pbC"/>
+                            <constraint firstItem="W8O-go-xxU" firstAttribute="top" secondItem="13J-Jg-usw" secondAttribute="bottom" constant="80" id="NJR-tY-e34"/>
+                            <constraint firstItem="UfW-JY-8oa" firstAttribute="leading" secondItem="Td4-8F-Sx3" secondAttribute="leadingMargin" id="c5q-Db-zKu"/>
+                            <constraint firstItem="13J-Jg-usw" firstAttribute="centerX" secondItem="Td4-8F-Sx3" secondAttribute="centerX" id="o0S-nf-kRl"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="N9M-Ma-L3m"/>
+                    <connections>
+                        <outlet property="button" destination="13J-Jg-usw" id="BaE-sw-GXv"/>
+                        <outlet property="textView" destination="UfW-JY-8oa" id="CRd-ao-JzY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fiK-Ma-eiu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="748" y="109.29535232383809"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DKA-Fh-qE2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aUQ-l3-CMQ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="70z-qT-ql0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="UNM-wg-hY4" kind="relationship" relationship="rootViewController" id="jAl-Om-e0M"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ag0-e7-6KN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-191.19999999999999" y="109.29535232383809"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="InO-dL-HnB">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Notifier View Controller-->
+        <scene sceneID="IMb-Rj-r9C">
+            <objects>
+                <viewController id="AAw-V5-Caw" customClass="NotifierViewController" customModule="iOS10_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QTa-Vo-QJo"/>
+                        <viewControllerLayoutGuide type="bottom" id="wSK-vw-K8e"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="B5Y-EO-4N7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ppd-RJ-DEY">
+                                <state key="normal" title="Local"/>
+                                <connections>
+                                    <action selector="notifyAfterFiveSec:" destination="AAw-V5-Caw" eventType="touchUpInside" id="txi-pe-nYb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UzU-ou-ZOe">
+                                <state key="normal" title="With Image"/>
+                                <connections>
+                                    <action selector="notifyWithImage:" destination="AAw-V5-Caw" eventType="touchUpInside" id="DZg-o4-35I"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iNK-Ar-ZiB">
+                                <state key="normal" title="With Sound"/>
+                                <connections>
+                                    <action selector="notifyWithSound:" destination="AAw-V5-Caw" eventType="touchUpInside" id="1iD-Xh-wib"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="erM-e9-h8n">
+                                <state key="normal" title="With Movie"/>
+                                <connections>
+                                    <action selector="notifyWithMovie:" destination="AAw-V5-Caw" eventType="touchUpInside" id="q3d-5U-TfO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zdu-AD-hqk">
+                                <state key="normal" title="With Custom UI"/>
+                                <connections>
+                                    <action selector="notifyWithCustomUI:" destination="AAw-V5-Caw" eventType="touchUpInside" id="vMB-0f-v8y"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D7z-yQ-8fa">
+                                <state key="normal" title="With Action"/>
+                                <connections>
+                                    <action selector="notifyWithAction:" destination="AAw-V5-Caw" eventType="touchUpInside" id="PHf-w0-0MF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="iNK-Ar-ZiB" firstAttribute="centerX" secondItem="B5Y-EO-4N7" secondAttribute="centerX" id="0vb-jY-X4f"/>
+                            <constraint firstItem="D7z-yQ-8fa" firstAttribute="centerX" secondItem="B5Y-EO-4N7" secondAttribute="centerX" id="9bn-P1-zAm"/>
+                            <constraint firstItem="D7z-yQ-8fa" firstAttribute="top" secondItem="Zdu-AD-hqk" secondAttribute="bottom" constant="30" id="CWO-eK-Rif"/>
+                            <constraint firstItem="iNK-Ar-ZiB" firstAttribute="top" secondItem="UzU-ou-ZOe" secondAttribute="bottom" constant="30" id="Mze-EV-o8v"/>
+                            <constraint firstItem="erM-e9-h8n" firstAttribute="top" secondItem="iNK-Ar-ZiB" secondAttribute="bottom" constant="30" id="Ukh-ph-erg"/>
+                            <constraint firstItem="UzU-ou-ZOe" firstAttribute="top" secondItem="Ppd-RJ-DEY" secondAttribute="bottom" constant="30" id="W9l-Cz-y51"/>
+                            <constraint firstItem="UzU-ou-ZOe" firstAttribute="centerX" secondItem="B5Y-EO-4N7" secondAttribute="centerX" id="Xk3-WQ-1ph"/>
+                            <constraint firstItem="Zdu-AD-hqk" firstAttribute="centerX" secondItem="B5Y-EO-4N7" secondAttribute="centerX" id="b4f-lT-c8k"/>
+                            <constraint firstItem="erM-e9-h8n" firstAttribute="centerX" secondItem="B5Y-EO-4N7" secondAttribute="centerX" id="enf-r4-dyW"/>
+                            <constraint firstItem="Ppd-RJ-DEY" firstAttribute="centerX" secondItem="B5Y-EO-4N7" secondAttribute="centerX" id="iih-JJ-RnM"/>
+                            <constraint firstItem="Zdu-AD-hqk" firstAttribute="top" secondItem="erM-e9-h8n" secondAttribute="bottom" constant="30" id="yQ2-pa-owW"/>
+                            <constraint firstItem="Ppd-RJ-DEY" firstAttribute="top" secondItem="QTa-Vo-QJo" secondAttribute="bottom" constant="100" id="ynb-n3-8Mq"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="JRa-ct-rA2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wtz-8T-0Jh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1574" y="859"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="KKZ-Jg-CM1">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="InO-dL-HnB" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bbl-5N-bjz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="AAw-V5-Caw" kind="relationship" relationship="rootViewController" id="Vo8-5y-40t"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Mp-Hc-qPB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="510.5" y="859.5"/>
+        </scene>
+    </scenes>
+</document>
