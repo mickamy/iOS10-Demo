@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>NSSpeechRecognitionUsageDescription</key>
-	<string>SpeechFramwrok の使用目的</string>
+	<string>SpeechFramework の使用目的</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
