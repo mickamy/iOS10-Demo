@@ -15,33 +15,41 @@ final class SpeechViewController: UIViewController {
     
     @IBOutlet weak var button: UIButton!
     
-    
     let recognizer = SFSpeechRecognizer(locale: Locale(identifier: "ja-JP"))
     
-    var request: SFSpeechRecognitionRequest?
+    var task: SFSpeechRecognitionTask?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "Speech Recognition"
         
+        button.isEnabled = false
+        
         SFSpeechRecognizer.requestAuthorization { status in
-            switch status {
-            case .authorized: break
-                // The user authorized your app's request to perform speech recognition.
-            case .denied: break
-                // The user denied your app's request to perform speech recognition.
-            case .restricted: break
-                // The authorization status of your app's request to perform speech recognition is unknown.
-            case .notDetermined: break
-                // The device denies your app's request to perform speech recognition.
+            DispatchQueue.main.async {
+                switch status {
+                case .authorized:
+                    print("authorized")
+                    self.button.isEnabled = true
+                case .denied:
+                    print("denied")
+                case .restricted:
+                    print("restricted")
+                case .notDetermined:
+                    print("not determined")
+                }
+                print(status)
             }
-            print(status)
         }
     }
     
     @IBAction func buttonTapped(_ sender: AnyObject) {
-        startRecognizeWithFile()
+        if task == nil {
+            startRecognizeWithFile()
+            button.isEnabled = false
+            button.setTitle("Recognizing...", for: .normal)
+        }
     }
     
     private func startRecognizeWithFile() {
@@ -49,13 +57,24 @@ final class SpeechViewController: UIViewController {
             print("Could not get file URL!")
             return
         }
-        request = SFSpeechURLRecognitionRequest(url: audioURL)
-        recognizer?.recognitionTask(with: request!) { result, error in
+        let request = SFSpeechURLRecognitionRequest(url: audioURL)
+        task = recognizer?.recognitionTask(with: request) { result, error in
             guard let result = result else {
                 print("Error on recognition task: \(error)")
+                self.didFinishRecognition()
                 return
             }
             self.textView.text = result.bestTranscription.formattedString
+            
+            if result.isFinal {
+                self.didFinishRecognition()
+            }
         }
+    }
+    
+    private func didFinishRecognition() {
+        button.isEnabled = true
+        button.setTitle("Start Recognition", for: .normal)
+        task = nil
     }
 }
